@@ -1,0 +1,69 @@
+/***
+ * Excerpted from "Functional Programming in Java",
+ * published by The Pragmatic Bookshelf.
+ * Copyrights apply to this code. It may not be used to create training material, 
+ * courses, books, articles, and the like. Contact us if you are in doubt.
+ * We make no guarantees that this code is fit for any purpose. 
+ * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
+ * 
+ * 2.1 リストをイテレート
+ * 
+ * 
+***/
+package collections;
+
+import java.util.List;
+import java.util.Arrays;
+import static collections._Folks.friends;
+import java.util.function.Consumer;
+
+/**
+ * 色々なイテレーション
+ * @author kinopp
+ */
+public class Iteration {
+
+    /**
+     * メイン
+     * @param args ダミー
+     */
+    public static void main(final String... args) {
+        
+        // 自殺点パターン（冗長でエラーが発生しやすい）
+        System.out.println("//" + "START:自殺点パターン");
+        for(int i = 0; i < friends.size(); i++) {
+            System.out.println(friends.get(i));
+        }
+
+        // 拡張for文 -> 外部イテレーター
+        System.out.println("//" + "START:拡張for文");
+        for(String name : friends) {
+            System.out.println(name);
+        }
+
+        // 匿名インナークラスを使用
+        System.out.println("//" + "START:匿名インナークラス");
+        friends.forEach(
+            new Consumer<String>() {
+                public void accept(final String name) {
+                    System.out.println(name);
+                }
+            }
+        );
+        // ラムダ式を使用（型あり）
+        System.out.println("//" + "START:ラムダ式を使用（型あり）");
+        friends.forEach((final String name) -> System.out.println(name));
+        
+        // ラムダ式を使用（型省略）
+        System.out.println("//" + "START:ラムダ式を使用（型省略）");
+        friends.forEach((name) -> System.out.println(name));
+
+        // ラムダ式を使用（カッコも省略）
+        System.out.println("//" + "START:ラムダ式を使用（カッコも省略）");
+        friends.forEach(name -> System.out.println(name));
+        
+        // メソッド参照を使用
+        System.out.println("//" + "START:メソッド参照を使用");
+        friends.forEach(System.out::println);
+    }
+}
