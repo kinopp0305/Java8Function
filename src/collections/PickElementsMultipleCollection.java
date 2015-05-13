@@ -1,14 +1,3 @@
-/***
- * Excerpted from "Functional Programming in Java",
- * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
- * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
- * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
- * 
- * 2.4 ラムダ式の再利用
- * 
-***/
 package collections;
 
 import java.util.List;
@@ -20,7 +9,7 @@ import static collections._Folks.comrades;
 import static collections._Folks.editors;
 
 /**
- *
+ * 2.4 ラムダ式の再利用
  * @author kinopp
  */
 public class PickElementsMultipleCollection {
