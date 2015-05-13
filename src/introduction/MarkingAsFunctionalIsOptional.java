@@ -1,7 +1,7 @@
 package introduction;
 
 /**
- * 関数インタフェースの例
+ * 自作関数インタフェースの例
  * @author kinoshita_h
  */
 public class MarkingAsFunctionalIsOptional {
@@ -41,7 +41,6 @@ public class MarkingAsFunctionalIsOptional {
 
         /**
          *
-         * @param なし
          * @return
          */
         boolean test();
