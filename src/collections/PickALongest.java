@@ -12,7 +12,7 @@ import static collections._Folks.friends;
 public class PickALongest {
 
     /**
-     *
+     * メイン
      * @param args
      */
     public static void main(final String[] args) {
