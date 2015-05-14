@@ -20,5 +20,5 @@ public class ListDirs {
       Files.list(Paths.get("."))
            .filter(Files::isDirectory)
            .forEach(System.out::println);
-  }
+    }
 }

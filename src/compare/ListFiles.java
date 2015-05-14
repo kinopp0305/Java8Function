@@ -18,5 +18,5 @@ public class ListFiles {
     public static void main(String[] args) throws IOException {
         Files.list(Paths.get("."))
              .forEach(System.out::println);
-  }
+    }
 }

@@ -7,9 +7,10 @@ import java.util.StringJoiner;
  * @author kinopp
  */
 public class IterateString {
-  private static void printChar(int aChar) {
-    System.out.println((char)(aChar));
-  }
+    
+    private static void printChar(int aChar) {
+        System.out.println((char)(aChar));
+    }
   
     /**
      * メイン
@@ -53,5 +54,5 @@ public class IterateString {
        .filter(Character::isDigit)
        .forEach(IterateString::printChar);
 
-  }
+    }
 }
