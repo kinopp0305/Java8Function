@@ -21,7 +21,7 @@ public class DiscountFunctional {
     public static void main(final String[] args) {
         
         final BigDecimal totalOfDiscountedPrices = 
-          prices.stream()
+            prices.stream()
                 .filter(price -> price.compareTo(BigDecimal.valueOf(20)) > 0)  // 20より大きいものを抽出
                 .map(price -> price.multiply(BigDecimal.valueOf(0.9)))         // 0.9かけたものをmap
                 .reduce(BigDecimal.ZERO, BigDecimal::add);                     // 加算する
