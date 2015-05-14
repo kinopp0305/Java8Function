@@ -1,11 +1,3 @@
-/***
- * Excerpted from "Functional Programming in Java",
- * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
- * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
- * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
-***/
 package compare;
 
 /**
@@ -13,8 +5,8 @@ package compare;
  * @author kinopp
  */
 public class _Person {
-  private final String name;
-  private final int age;
+    private final String name;
+    private final int age;
   
     /**
      *
@@ -22,9 +14,9 @@ public class _Person {
      * @param theAge
      */
     public _Person(final String theName, final int theAge) {
-    name = theName;
-    age = theAge;
-  } 
+        name = theName;
+        age = theAge;
+    } 
   
     /**
      *
@@ -44,10 +36,10 @@ public class _Person {
      * @return
      */
     public int ageDifference(final _Person other) {
-    return age - other.age;
-  }
+        return age - other.age;
+    }
   
-  public String toString() {
-    return String.format("%s - %d", name, age);
-  }
+    public String toString() {
+        return String.format("%s - %d", name, age);
+    }
 }
