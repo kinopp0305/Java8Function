@@ -1,11 +1,3 @@
-/***
- * Excerpted from "Functional Programming in Java",
- * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
- * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
- * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
-***/
 package applying;
 
 import designing._YahooFinance;
@@ -19,16 +11,16 @@ import static java.util.stream.Collectors.joining;
 public class Stocks100 {
 
     /**
-     *
+     * メイン
      * @param args
      */
     public static void main(final String[] args) {
         final BigDecimal HUNDRED = new BigDecimal("100");
         System.out.println("Stocks priced over $100 are " + 
-          _Tickers.symbols
-                  .stream()
-                  .filter(symbol -> _YahooFinance.getPrice(symbol).compareTo(HUNDRED) > 0)
-                  .sorted()
-                  .collect(joining(", ")));
+            _Tickers.symbols
+                .stream()
+                .filter(symbol -> _YahooFinance.getPrice(symbol).compareTo(HUNDRED) > 0)
+                .sorted()
+                .collect(joining(", ")));
     }
 }
