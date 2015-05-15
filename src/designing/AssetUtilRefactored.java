@@ -45,10 +45,10 @@ public class AssetUtilRefactored {
      */
     public static void main(final String[] args) {
         List<_Asset> assets = Arrays.asList(
-          new _Asset(_Asset.AssetType.BOND, 1000),
-          new _Asset(_Asset.AssetType.BOND, 2000),
-          new _Asset(_Asset.AssetType.STOCK, 3000),
-          new _Asset(_Asset.AssetType.STOCK, 4000)
+            new _Asset(_Asset.AssetType.BOND, 1000),
+            new _Asset(_Asset.AssetType.BOND, 2000),
+            new _Asset(_Asset.AssetType.STOCK, 3000),
+            new _Asset(_Asset.AssetType.STOCK, 4000)
         );
 
         // 全件対象。常にtrue
