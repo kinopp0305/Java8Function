@@ -6,8 +6,7 @@ import static collections._Folks.friends;
 import java.util.function.Consumer;
 
 /**
- * 2.1 リストをイテレート
- * 色々なイテレーション
+ * 色々なイテレーション（2.1 リストをイテレート）
  * @author kinopp
  */
 public class Iteration {
@@ -31,6 +30,7 @@ public class Iteration {
         }
 
         // 匿名インナークラスを使用
+        // -- forEachはConsumer型を引数に取る
         System.out.println("//" + "START:匿名インナークラス");
         friends.forEach(
             new Consumer<String>() {

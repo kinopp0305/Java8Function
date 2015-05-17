@@ -8,22 +8,23 @@ import java.util.function.Function;
 import static collections._Folks.friends;
 
 /**
- * 2.5 静的スコープとクロージャ
+ * collections._Folks.friendsからNまたはBで始まる文字数を探す（2.5 静的スコープとクロージャ）
  * @author kinopp
  */
 public class PickDifferentNames {
 
     /**
-     * 始まる文字をパラメータに取りラムダ式を返す
+     * 始まる文字をパラメータに取りラムダ式を返すstatic関数
      * @param letter 文字
      * @return ラムダ式
      */
     public static Predicate<String> checkIfStartsWith(final String letter) {
+        // startsWithはboolean型を返す
         return name -> name.startsWith(letter);
     }
   
     /**
-     *
+     * メイン
      * @param args
      */
     public static void main(final String[] args) {
@@ -31,6 +32,7 @@ public class PickDifferentNames {
         System.out.println("//" + "START:ラムダ式における重複");
         {
             // ラムダ式における重複
+            // -- 重複があって無駄が多い
             final Predicate<String> startsWithN = name -> name.startsWith("N");
             final Predicate<String> startsWithB = name -> name.startsWith("B");
     
@@ -46,7 +48,7 @@ public class PickDifferentNames {
         }
 
         System.out.println("//" + "START:静的スコープで重複排除");
-        {
+        {   
             final long countFriendsStartN =
                 friends.stream()
                     .filter(checkIfStartsWith("N")).count();

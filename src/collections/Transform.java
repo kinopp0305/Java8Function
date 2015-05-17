@@ -6,13 +6,13 @@ import java.util.Arrays;
 import static collections._Folks.friends;
 
 /**
- * 2.2 リストの変換
+ * friendsの要素を取得し、大文字に変換または要素数を求め表示（2.2 リストの変換）
  * @author kinopp
  */
 public class Transform {
 
     /**
-     *
+     * メイン
      * @param args
      */
     public static void main(final String[] args) {

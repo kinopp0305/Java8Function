@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 import static collections._Folks.friends;
 
 /**
- * 2.3 要素の検索
+ * collections._Folks.friendsからNで始まる名前の数を探す（2.3 要素の検索）
  * @author kinopp
  */
 public class PickElements {
 
     /**
-     * collections._Folks.friendsからNで始まる名前の数を探す
+     * メイン
      * @param args
      */
     public static void main(final String[] args) {

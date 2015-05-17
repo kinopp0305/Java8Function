@@ -10,12 +10,6 @@ public class MarkingAsFunctionalIsOptional {
      * アノテーションなし
      */
     public interface Sample1 {
-
-        /**
-         *
-         * @param input
-         * @return
-         */
         boolean test(int input);
     }
 
@@ -24,12 +18,6 @@ public class MarkingAsFunctionalIsOptional {
      */
     @FunctionalInterface
     public interface Sample2 {
-
-        /**
-         *
-         * @param input
-         * @return
-         */
         boolean test(int input);
     }
     
@@ -38,11 +26,6 @@ public class MarkingAsFunctionalIsOptional {
      */
     @FunctionalInterface
     public interface Sample3 {
-
-        /**
-         *
-         * @return
-         */
         boolean test();
     }
   

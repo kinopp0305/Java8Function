@@ -9,13 +9,13 @@ import static collections._Folks.comrades;
 import static collections._Folks.editors;
 
 /**
- * 2.4 ラムダ式の再利用
+ * 各要素の要素数を表示（2.4 ラムダ式の再利用）
  * @author kinopp
  */
 public class PickElementsMultipleCollection {
     
     /**
-     *
+     * メイン
      * @param args
      */
     public static void main(final String[] args) {
@@ -44,6 +44,7 @@ public class PickElementsMultipleCollection {
         System.out.println("//" + "START:ラムダ式再利用あり");
         {
             // ラムダ式を共通化：Predicateを使用
+            // -- filterはPredicateを引数に取る
             final Predicate<String> startsWithN = name -> name.startsWith("N");
 
             final long countFriendsStartN = 
