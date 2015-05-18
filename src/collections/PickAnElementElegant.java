@@ -7,7 +7,7 @@ import java.util.Optional;
 import static collections._Folks.friends;
 
 /**
- * 検索文字で始まる最初の名前をリストより検索する（関数未使用）
+ * 名前を見つける（関数使用）
  * @author kinopp
  */
 public class PickAnElementElegant {

@@ -6,7 +6,7 @@ import java.util.Optional;
 import static collections._Folks.friends;
 
 /**
- *
+ * 一番長い文字を見つける
  * @author kinopp
  */
 public class PickALongest {
