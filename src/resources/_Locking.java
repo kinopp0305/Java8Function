@@ -1,11 +1,3 @@
-/***
- * Excerpted from "Functional Programming in Java",
- * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
- * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
- * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
-***/
 package resources;
 
 import java.util.concurrent.locks.Lock;
@@ -17,48 +9,48 @@ import static resources._Locker.runLocked;
  * @author kinopp
  */
 public class _Locking {
-  Lock lock = new ReentrantLock(); //or mock
+    Lock lock = new ReentrantLock(); //or mock
   
     /**
      *
      * @param mock
      */
     protected void setLock(final Lock mock) {
-    lock = mock;
-  } 
+        lock = mock;
+    } 
 
     /**
      *
      */
     public void doOp1() {
-    lock.lock();
-    try {
+        lock.lock();
+        try {
       //...critical code...
-    } finally {
-      lock.unlock();
+        } finally {
+            lock.unlock();
+        }
     }
-  }
   //...
 
     /**
      *
      */
     public void doOp2() {
-    runLocked(lock, () -> {/*...critical code ... */});
-  }
+        runLocked(lock, () -> {/*...critical code ... */});
+    }
   
     /**
      *
      */
     public void doOp3() {
-    runLocked(lock, () -> {/*...critical code ... */});
-  }
+        runLocked(lock, () -> {/*...critical code ... */});
+    }
   
     /**
      *
      */
     public void doOp4() {
-    runLocked(lock, () -> {/*...critical code ... */});
-  }
+        runLocked(lock, () -> {/*...critical code ... */});
+    }
 
 }

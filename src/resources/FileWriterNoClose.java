@@ -1,11 +1,3 @@
-/***
- * Excerpted from "Functional Programming in Java",
- * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
- * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
- * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
-***/
 package resources;
 
 import java.io.FileWriter;
@@ -16,7 +8,7 @@ import java.io.IOException;
  * @author kinopp
  */
 public class FileWriterNoClose {
-  private FileWriter writer;
+    private FileWriter writer;
   
     /**
      *
@@ -24,8 +16,8 @@ public class FileWriterNoClose {
      * @throws IOException
      */
     public FileWriterNoClose(String fileName) throws IOException {
-    writer = new FileWriter(fileName);
-  }
+        writer = new FileWriter(fileName);
+    }
   
     /**
      *
@@ -33,23 +25,23 @@ public class FileWriterNoClose {
      * @throws IOException
      */
     public void writeStuff(String message) throws IOException {
-    writer.write(message);
-  }
+        writer.write(message);
+    }
   
-  public void finalize() throws IOException {
-    writer.close();
-  }
+    public void finalize() throws IOException {
+        writer.close();
+    }
 
     /**
      *
      * @param args
      */
     public static void main(String[] args) {
-    try {
-      FileWriterNoClose writerExample = new FileWriterNoClose("noclose.txt");
-      writerExample.writeStuff("peek-a-boo");      
-    } catch(IOException ex) {
-      System.out.println(ex);
+        try {
+            FileWriterNoClose writerExample = new FileWriterNoClose("noclose.txt");
+            writerExample.writeStuff("peek-a-boo");      
+        } catch(IOException ex) {
+            System.out.println(ex);
+        }
     }
-  }
 }
