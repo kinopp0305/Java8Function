@@ -1,17 +1,3 @@
-/***
- * Excerpted from "Functional Programming in Java",
- * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
- * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
- * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
- * 
- * 4.1.3 主要な関心を分離
- * 
- * AssetUtilクラスのリファクタリング版
- * totalAssetValues、totalBondValues、totalStockValuesを一つにまとめる
- * 
-***/
 package designing;
 
 import java.util.Arrays;
@@ -20,7 +6,7 @@ import java.util.function.Predicate;
 import designing._Asset.AssetType;
 
 /**
- *
+ * AssetUtilクラスのリファクタリング版（4.1.3 主要な関心を分離）
  * @author kinoshita_h
  */
 public class AssetUtilRefactored {

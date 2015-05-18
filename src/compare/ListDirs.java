@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.io.IOException;
 
 /**
- *
+ * 当ソースのプロジェクト配下にあるフォルダーのパスを表示（ファイルは対象外）
  * @author kinopp
  */
 public class ListDirs {
