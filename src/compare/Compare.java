@@ -18,11 +18,9 @@ public class Compare {
      * @param message
      * @param people
      */
-    public static void printPeople(
-        final String message, final List<_Person> people) {
-      
-        System.out.println(message);
-        people.forEach(System.out::println);
+    public static void printPeople(final String message, final List<_Person> people) {
+            System.out.println(message);
+            people.forEach(System.out::println);
     }
   
     /**
@@ -38,37 +36,33 @@ public class Compare {
         );
 
         {  
-            System.out.println("//" + "START:AGE_ASCEND_OUTPUT");
+            System.out.println("//" + "START:名前の昇順で出力");
             List<_Person> ascendingAge = 
               people.stream()
                     .sorted((person1, person2) -> person1.ageDifference(person2))
                     .collect(toList());
             printPeople("Sorted in ascending order by age: ", ascendingAge);
-            System.out.println("//" + "END:AGE_ASCEND_OUTPUT");
         }
 
         {  
-            System.out.println("//" + "START:AGE_ASCEND_MR_OUTPUT");
+            System.out.println("//" + "START:名前の昇順で出力（メソッド参照）");
             List<_Person> ascendingAge = 
               people.stream()
                     .sorted(_Person::ageDifference)
                     .collect(toList());
-
             printPeople("Sorted in ascending order by age: ", ascendingAge);
-            System.out.println("//" + "END:AGE_ASCEND_MR_OUTPUT");
         }
 
         {
-            System.out.println("//" + "START:AGE_DESCEND_OUTPUT");
+            System.out.println("//" + "START:名前の降順で出力");
             printPeople("Sorted in descending order by age: ",
               people.stream()
                     .sorted((person1, person2) -> person2.ageDifference(person1))
                     .collect(toList()));
-            System.out.println("//" + "END:AGE_DESCEND_OUTPUT");
 
-            System.out.println("//" + "START:REVERSE_ORDER_OUTPUT");
+            System.out.println("//" + "START:名前の昇順と降順で出力(reversed使用)");
             Comparator<_Person> compareAscending = 
-              (person1, person2) -> person1.ageDifference(person2);
+                    (person1, person2) -> person1.ageDifference(person2);
             Comparator<_Person> compareDescending = compareAscending.reversed();
 
             printPeople("Sorted in ascending order by age: ",
@@ -81,7 +75,6 @@ public class Compare {
                     .sorted(compareDescending)
                     .collect(toList())
             );
-            System.out.println("//" + "END:REVERSE_ORDER_OUTPUT");
 
             System.out.println("//" + "START:NAME_ASCEND_OUTPUT");
             printPeople("Sorted in ascending order by name: ",
