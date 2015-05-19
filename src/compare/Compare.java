@@ -8,15 +8,15 @@ import static java.util.stream.Collectors.toList;
 import static java.util.Comparator.comparing;
 
 /**
- *
+ * 年齢、名前順のソート例
  * @author kinopp
  */
 public class Compare {
 
     /**
-     *
-     * @param message
-     * @param people
+     * ソート結果を表示する
+     * @param message 表示のタイトル
+     * @param people 表示対象のリスト
      */
     public static void printPeople(final String message, final List<_Person> people) {
             System.out.println(message);
@@ -36,7 +36,7 @@ public class Compare {
         );
 
         {  
-            System.out.println("//" + "START:名前の昇順で出力");
+            System.out.println("//" + "START:年齢の昇順で出力");
             List<_Person> ascendingAge = 
               people.stream()
                     .sorted((person1, person2) -> person1.ageDifference(person2))
@@ -45,7 +45,7 @@ public class Compare {
         }
 
         {  
-            System.out.println("//" + "START:名前の昇順で出力（メソッド参照）");
+            System.out.println("//" + "START:年齢の昇順で出力（メソッド参照）");
             List<_Person> ascendingAge = 
               people.stream()
                     .sorted(_Person::ageDifference)
@@ -54,13 +54,13 @@ public class Compare {
         }
 
         {
-            System.out.println("//" + "START:名前の降順で出力");
+            System.out.println("//" + "START:年齢の降順で出力");
             printPeople("Sorted in descending order by age: ",
               people.stream()
                     .sorted((person1, person2) -> person2.ageDifference(person1))
                     .collect(toList()));
 
-            System.out.println("//" + "START:名前の昇順と降順で出力(reversed使用)");
+            System.out.println("//" + "START:年齢の昇順と降順で出力(reversed使用)");
             Comparator<_Person> compareAscending = 
                     (person1, person2) -> person1.ageDifference(person2);
             Comparator<_Person> compareDescending = compareAscending.reversed();
@@ -76,29 +76,26 @@ public class Compare {
                     .collect(toList())
             );
 
-            System.out.println("//" + "START:NAME_ASCEND_OUTPUT");
+            System.out.println("//" + "START:名前の昇順と降順で出力");
             printPeople("Sorted in ascending order by name: ",
               people.stream()
                     .sorted((person1, person2) -> 
                        person1.getName().compareTo(person2.getName()))
                     .collect(toList()));
-            System.out.println("//" + "END:NAME_ASCEND_OUTPUT");
         }
 
         {
-            System.out.println("//" + "START:YOUNGEST_OUTPUT");
+            System.out.println("//" + "START:最年少を出力");
             people.stream()
                   .min(_Person::ageDifference)
                   .ifPresent(youngest -> System.out.println("Youngest: " + youngest));
-        System.out.println("//" + "END:YOUNGEST_OUTPUT");
         }
 
         {
-            System.out.println("//" + "START:ELDEST_OUTPUT");
+            System.out.println("//" + "START:最年長を出力");
             people.stream()
                   .max(_Person::ageDifference)
                   .ifPresent(eldest -> System.out.println("Eldest: " + eldest));
-            System.out.println("//" + "END:ELDEST_OUTPUT");
         }
 
         {
@@ -117,7 +114,7 @@ public class Compare {
         }
 
         {
-            System.out.println("//" + "START:SORT_NAME_AND_AGE_OUTPUT");
+            System.out.println("//" + "START:年齢＋名前の昇順に出力");
 
             final Function<_Person, Integer> byAge = person -> person.getAge();
             final Function<_Person, String> byTheirName = person -> person.getName();
@@ -126,7 +123,6 @@ public class Compare {
               people.stream()
                     .sorted(comparing(byAge).thenComparing(byTheirName))
                     .collect(toList()));
-            System.out.println("//" + "END:SORT_NAME_AND_AGE_OUTPUT");
         }
     }
 }
